@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneaker C&S | Cửa Hàng Giày Thể Thao &amp; Sneaker Chính Hãng</title>
+  <meta name="description" content="Sneaker C&S - Tưng bừng khai trương giảm ngay 50%. Cửa hàng giày thể thao, sneaker nam nữ chính hãng với hàng trăm mẫu hot deal, giao hàng nhanh toàn quốc.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sneaker C&S | Giày Thể Thao Chính Hãng - Giảm Ngay 50%">
+  <meta property="og:description" content="Khám phá ngay bộ sưu tập giày thể thao, sneaker hot nhất mùa này với ưu đãi lên tới 50% và bảo hành 12 tháng.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M4 22 C10 16 18 12 28 14 C28 18 26 24 24 26 L4 26 Z' fill='%23e53935'/><rect x='2' y='25' width='28' height='4' rx='2' fill='%23111827'/></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Bricolage+Grotesque:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Thư viện Animate.css & AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- CSS Tự viết của Dự án -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       HEADER (EGO SPORT STYLE - TRANG CHỦ / LOGO CENTER / ACTIONS RIGHT)
+       ====================================================================== -->
+  <header class="site-header">
+    <!-- Menu điều hướng bên trái -->
+    <nav class="nav-desktop" aria-label="Điều hướng chính">
+      <ul class="nav-list">
+        <li><a class="active" href="#top">Trang chủ</a></li>
+        <li><a href="#san-pham">Sản phẩm ▾</a></li>
+        <li><a href="#khuyen-mai">Khuyến mãi</a></li>
+        <li><a href="#vi-sao">Tin tức</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <!-- Logo chính giữa (EGO Sport style) -->
+    <div class="logo-center">
+      <a class="logo" href="#top" aria-label="Sneaker C&S Trang chủ">
+        <svg class="logo-icon-svg" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M2 20 C8 13 18 9 30 12 C30 17 27 24 25 25 L3 25 Z"/>
+          <line x1="2" y1="26" x2="30" y2="26" stroke="#111827" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        Sneaker <span class="cs-accent">C&amp;S</span>
+      </a>
+    </div>
+
+    <!-- Icon hành động bên phải: Tìm kiếm, Tài khoản, Giỏ hàng -->
+    <div class="header-actions">
+      <button class="icon-btn" type="button" aria-label="Tìm kiếm" onclick="alert('Tính năng tìm kiếm đang kích hoạt!')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+
+      <button class="icon-btn" type="button" aria-label="Tài khoản" onclick="alert('Trang quản lý tài khoản thành viên Sneaker C&S!')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+
+      <button class="icon-btn cart-btn" id="open-cart-btn" type="button" aria-label="Giỏ hàng">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+
+      <button class="mobile-menu-toggle" id="mobile-toggle" type="button" aria-label="Mở menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu di động">
+    <ul>
+      <li><a href="#top">Trang chủ</a></li>
+      <li><a href="#san-pham">Sản phẩm bán chạy</a></li>
+      <li><a href="#khuyen-mai">Khuyến mãi giảm 50%</a></li>
+      <li><a href="#vi-sao">Cam kết chất lượng</a></li>
+      <li><a href="#lien-he">Liên hệ đặt hàng</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======================================================================
+       MAIN CONTENT
+       ====================================================================== -->
+  <main id="top">
+
+    <!-- HERO BANNER (HỒNG PASTEL - TƯNG BỪNG KHAI TRƯƠNG GIẢM 50%) -->
+    <section class="hero-banner">
+      <div class="hero-container">
+        <!-- Text bên trái -->
+        <div class="hero-content" data-aos="fade-right">
+          <p class="hero-tagline">Tưng bừng khai trương</p>
+          <h1 class="hero-headline">Giảm ngay <span class="highlight-red">50%</span></h1>
+          <p class="hero-desc">Áp dụng cho toàn bộ bộ sưu tập giày thể thao, sneaker nam nữ chính hãng nhân tuần lễ khai trương Showroom Sneaker C&amp;S.</p>
+          <a class="btn-hero-buy" href="#san-pham">Mua Ngay</a>
+        </div>
+
+        <!-- Ảnh giày thể thao thật trôi bồng bềnh bên phải -->
+        <div class="hero-image-wrap" data-aos="fade-left">
+          <img class="hero-floating-shoe" 
+               src="https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?w=800&auto=format&fit=crop&q=80" 
+               alt="Giày Thể Thao Hồng Khai Trương" 
+               loading="eager"
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80';">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CATEGORY BAR (DẢI DANH MỤC BO TRÒN VIỀN ĐỎ/HỒNG NHƯ ẢNH WEB)
+         ==================================================================== -->
+    <section class="category-bar-section">
+      <div class="category-bar-container" data-aos="zoom-in">
+        <div class="category-pill active" data-filter="all">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Bộ sưu tập</span>
+        </div>
+
+        <div class="category-pill" data-filter="boots">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 19v-9a3 3 0 0 1 3-3h3v5l4 2 6-1v6H4z"/></svg>
+          <span>Boots</span>
+        </div>
+
+        <div class="category-pill" data-filter="low">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 18l5-7 5 3 7-1v5H3z"/><circle cx="17" cy="14" r="1.5"/></svg>
+          <span>Cổ Thấp</span>
+        </div>
+
+        <div class="category-pill" data-filter="thethao">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+          <span>Thể thao</span>
+        </div>
+
+        <div class="category-pill" data-filter="mid-high">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 20V8l4-2h4v7l6 2v5H5z"/></svg>
+          <span>Cổ Cao</span>
+        </div>
+
+        <div class="category-pill" data-filter="debet">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 19h18v2H3zM4 17l6-6 4 3 6-1v4H4z"/></svg>
+          <span>Đế bệt</span>
+        </div>
+
+        <div class="category-pill" data-filter="runner">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 18c4-5 9-6 16-2v3H4z"/><path d="M10 12l4-4"/></svg>
+          <span>Slip-on</span>
+        </div>
+
+        <div class="category-pill" data-filter="all">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M2 18l4-8 5 2 9-2v8H2z"/><circle cx="8" cy="15" r="1.5"/><circle cx="16" cy="14" r="1.5"/></svg>
+          <span>Sneaker</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PRODUCTS SECTION (# SẢN PHẨM BÁN CHẠY NHƯ ẢNH WEB)
+         ==================================================================== -->
+    <section class="products-section" id="san-pham">
+      <div class="section-head" data-aos="fade-up">
+        <h2># Sản phẩm bán chạy</h2>
+        <p>Top những sản phẩm được mua nhiều nhất tại Sneaker C&amp;S</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" type="button" data-filter="all">Tất cả sản phẩm</button>
+        <button class="filter-btn" type="button" data-filter="thethao">Giày Thể Thao</button>
+        <button class="filter-btn" type="button" data-filter="low">Sneaker Cổ Thấp</button>
+        <button class="filter-btn" type="button" data-filter="mid-high">Sneaker Cổ Cao</button>
+        <button class="filter-btn" type="button" data-filter="runner">Giày Chạy &amp; Slip-On</button>
+      </div>
+
+      <!-- Products Grid (10 sản phẩm có ảnh thật & stamp đỏ như ảnh web) -->
+      <div class="products-grid">
+
+        <!-- SẢN PHẨM 1 (Biti's Hunter Đen) -->
+        <article class="product-card" data-category="thethao" data-aos="fade-up">
+          <div class="stamp-badge">BEST<br>SELLER</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Thể Thao Nam Biti's Hunter Black" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Thể Thao Nam Biti's Hunter Street Dark">Giày Thể Thao Nam Biti's Hunter Street Dark</h3>
+            <div class="product-price">499.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">39</button>
+                <button type="button" class="size-btn selected">40</button>
+                <button type="button" class="size-btn">41</button>
+                <button type="button" class="size-btn">42</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-1" data-name="Giày Thể Thao Nam Biti's Hunter Street Dark" data-price="499000" data-img="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 2 (Adidas Valstripes Trắng) -->
+        <article class="product-card" data-category="low" data-aos="fade-up" data-aos-delay="50">
+          <div class="stamp-badge">HOT<br>DEAL</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&auto=format&fit=crop&q=80" 
+                 alt="Adidas Valstripes 2 ADV Classic White" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Adidas Valstripes 2 ADV Classic White">Adidas Valstripes 2 ADV Classic White</h3>
+            <div class="product-price">890.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">39</button>
+                <button type="button" class="size-btn">40</button>
+                <button type="button" class="size-btn selected">41</button>
+                <button type="button" class="size-btn">42</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-2" data-name="Adidas Valstripes 2 ADV Classic White" data-price="890000" data-img="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 3 (Hunter Rêu Outdoor) -->
+        <article class="product-card" data-category="thethao" data-aos="fade-up" data-aos-delay="100">
+          <div class="stamp-badge">SALE<br>50%</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Thể Thao Nam Biti's Hunter Green" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Thể Thao Nam Hunter Green Trail">Giày Thể Thao Nam Hunter Green Trail</h3>
+            <div class="product-price">899.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">40</button>
+                <button type="button" class="size-btn selected">41</button>
+                <button type="button" class="size-btn">42</button>
+                <button type="button" class="size-btn">43</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-3" data-name="Giày Thể Thao Nam Hunter Green Trail" data-price="899000" data-img="https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 4 (Sneaker Just Do It Sắc Cam) -->
+        <article class="product-card" data-category="runner" data-aos="fade-up" data-aos-delay="150">
+          <div class="stamp-badge">BEST<br>SELLER</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Thể Thao Just Do It Nam Nữ Sắc Cam" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Thể Thao Just Do It Sắc Cam Bùng Nổ">Giày Thể Thao Just Do It Sắc Cam Bùng Nổ</h3>
+            <div class="product-price">980.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">38</button>
+                <button type="button" class="size-btn">39</button>
+                <button type="button" class="size-btn selected">40</button>
+                <button type="button" class="size-btn">41</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-4" data-name="Giày Thể Thao Just Do It Sắc Cam Bùng Nổ" data-price="980000" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 5 (Sneaker C&S Shark Fang) -->
+        <article class="product-card" data-category="low" data-aos="fade-up" data-aos-delay="200">
+          <div class="stamp-badge">HOT<br>DEAL</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Sneaker C&S Shark Fang Low White" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Sneaker C&S Shark Fang Low White">Giày Sneaker C&amp;S Shark Fang Low White</h3>
+            <div class="product-price">1.290.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">39</button>
+                <button type="button" class="size-btn selected">40</button>
+                <button type="button" class="size-btn">41</button>
+                <button type="button" class="size-btn">42</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-5" data-name="Giày Sneaker C&S Shark Fang Low White" data-price="1290000" data-img="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 6 (Hunter Blue Ocean) -->
+        <article class="product-card" data-category="thethao" data-aos="fade-up">
+          <div class="stamp-badge">SALE<br>50%</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Thể Thao Hunter Blue Ocean Air" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Thể Thao Hunter Blue Ocean Air">Giày Thể Thao Hunter Blue Ocean Air</h3>
+            <div class="product-price">899.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">38</button>
+                <button type="button" class="size-btn selected">39</button>
+                <button type="button" class="size-btn">40</button>
+                <button type="button" class="size-btn">41</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-6" data-name="Giày Thể Thao Hunter Blue Ocean Air" data-price="899000" data-img="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 7 (Classic Leather White) -->
+        <article class="product-card" data-category="low" data-aos="fade-up" data-aos-delay="50">
+          <div class="stamp-badge">BEST<br>SELLER</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Sneaker Nam Classic Leather White" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Sneaker Nam Classic Leather White">Giày Sneaker Nam Classic Leather White</h3>
+            <div class="product-price">750.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">39</button>
+                <button type="button" class="size-btn">40</button>
+                <button type="button" class="size-btn selected">41</button>
+                <button type="button" class="size-btn">42</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-7" data-name="Giày Sneaker Nam Classic Leather White" data-price="750000" data-img="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 8 (High-Top Retro Street) -->
+        <article class="product-card" data-category="mid-high" data-aos="fade-up" data-aos-delay="100">
+          <div class="stamp-badge">HOT<br>DEAL</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Sneaker Cổ Cao Retro Street Edition" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Sneaker Cổ Cao Retro Street Edition">Giày Sneaker Cổ Cao Retro Street Edition</h3>
+            <div class="product-price">1.190.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">40</button>
+                <button type="button" class="size-btn selected">41</button>
+                <button type="button" class="size-btn">42</button>
+                <button type="button" class="size-btn">43</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-8" data-name="Giày Sneaker Cổ Cao Retro Street Edition" data-price="1190000" data-img="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 9 (Chunky Fashion Runner) -->
+        <article class="product-card" data-category="thethao" data-aos="fade-up" data-aos-delay="150">
+          <div class="stamp-badge">BEST<br>SELLER</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Thể Thao Chunky Streetwear Edition" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Thể Thao Chunky Streetwear Edition">Giày Thể Thao Chunky Streetwear Edition</h3>
+            <div class="product-price">950.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">38</button>
+                <button type="button" class="size-btn selected">39</button>
+                <button type="button" class="size-btn">40</button>
+                <button type="button" class="size-btn">41</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-9" data-name="Giày Thể Thao Chunky Streetwear Edition" data-price="950000" data-img="https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- SẢN PHẨM 10 (Speed Dribbler Slip-On) -->
+        <article class="product-card" data-category="runner" data-aos="fade-up" data-aos-delay="200">
+          <div class="stamp-badge">SALE<br>50%</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&auto=format&fit=crop&q=80" 
+                 alt="Giày Thể Thao Slip-On Speed Dribbler" 
+                 loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" title="Giày Thể Thao Slip-On Speed Dribbler">Giày Thể Thao Slip-On Speed Dribbler</h3>
+            <div class="product-price">690.000 đ</div>
+            <div class="size-selector">
+              <div class="size-options">
+                <button type="button" class="size-btn">39</button>
+                <button type="button" class="size-btn selected">40</button>
+                <button type="button" class="size-btn">41</button>
+                <button type="button" class="size-btn">42</button>
+              </div>
+            </div>
+            <button class="btn-card-add" type="button" data-id="sp-10" data-name="Giày Thể Thao Slip-On Speed Dribbler" data-price="690000" data-img="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&auto=format&fit=crop&q=80">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PROMOTIONAL BANNER SẮC CAM (BÙNG NỔ SẮC CAM NHƯ ẢNH WEB BITI'S)
+         ==================================================================== -->
+    <section class="promo-orange-banner" id="khuyen-mai">
+      <div class="promo-banner-inner" data-aos="zoom-in">
+        <div class="promo-text-wrap">
+          <h3>SNEAKER C&amp;S SPECIAL DROP</h3>
+          <h2>BÙNG NỔ SẮC CAM</h2>
+          <p>Quà tặng hấp dẫn kèm mỗi đơn hàng hôm nay</p>
+          <a class="btn-promo-buy" href="#san-pham">Mua Ngay</a>
+        </div>
+        <div class="promo-images-wrap">
+          <img class="promo-img" 
+               src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80" 
+               alt="Bùng Nổ Sắc Cam Sneaker Pair"
+               loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WHY CHOOSE SECTION (CAM KẾT CỬA HÀNG)
+         ==================================================================== -->
+    <section class="why-section" id="vi-sao">
+      <div class="section-head" data-aos="fade-up">
+        <h2>Cam Kết Từ Sneaker C&amp;S</h2>
+        <p>Uy tín hàng đầu với chính sách phục vụ tận tâm nhất</p>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card" data-aos="fade-up">
+          <div class="why-icon">🛡️</div>
+          <h3>100% Hàng Chính Hãng</h3>
+          <p>Cam kết hoàn tiền gấp đôi nếu phát hiện hàng giả, hàng nhái kém chất lượng.</p>
+        </article>
+
+        <article class="why-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="why-icon">🔄</div>
+          <h3>Đổi Size 7 Ngày Miễn Phí</h3>
+          <p>Thử giày tại nhà chưa vừa chân? Hỗ trợ đổi size tận nhà hoàn toàn miễn phí.</p>
+        </article>
+
+        <article class="why-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="why-icon">🚚</div>
+          <h3>Giao Hàng Siêu Tốc</h3>
+          <p>Giao nhanh nội thành trong 2 giờ, hỗ trợ kiểm tra hàng trước khi thanh toán.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ORDER / CONTACT FORM SECTION
+         ==================================================================== -->
+    <section class="contact-section" id="lien-he">
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info-wrap" data-aos="fade-right">
+          <h2>Liên Hệ &amp; Showroom</h2>
+          <p class="desc">
+            Ghé thăm cửa hàng để trải nghiệm thử giày trực tiếp hoặc đặt hàng trực tuyến để nhận ưu đãi giảm 50% ngay hôm nay.
+          </p>
+
+          <div class="contact-cards">
+            <div class="contact-card-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Địa chỉ Showroom:</strong>
+                <span>Biên Hòa, Tỉnh Đồng Nai (Khu vực ĐH Lạc Hồng)</span>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>Hotline Tư Vấn:</strong>
+                <a href="tel:0900000000">0900 000 000 (8:30 - 21:30)</a>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong>Email Hỗ Trợ:</strong>
+                <a href="mailto:sneakercs.vn@gmail.com">sneakercs.vn@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pre-order Form -->
+        <div class="preorder-form-wrap" data-aos="fade-left">
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-red)" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Đăng Ký Đặt Giày Ưu Đãi
+          </h3>
+          <p>Chuyên viên Sneaker C&amp;S sẽ liên hệ xác nhận size và thời gian nhận hàng trong 15 phút.</p>
+
+          <form id="preorder-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="order-name">HỌ VÀ TÊN *</label>
+                <input class="form-control" type="text" id="order-name" required placeholder="Ví dụ: Nguyễn Văn A">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="order-phone">SỐ ĐIỆN THOẠI *</label>
+                <input class="form-control" type="tel" id="order-phone" required placeholder="09xxxxxxxx">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="order-product">CHỌN MẪU GIÀY *</label>
+                <select class="form-control" id="order-product">
+                  <option value="Giày Thể Thao Nam Biti's Hunter Street Dark">Giày Thể Thao Nam Biti's Hunter Street Dark (499.000 đ)</option>
+                  <option value="Adidas Valstripes 2 ADV Classic White">Adidas Valstripes 2 ADV Classic White (890.000 đ)</option>
+                  <option value="Giày Thể Thao Nam Hunter Green Trail">Giày Thể Thao Nam Hunter Green Trail (899.000 đ)</option>
+                  <option value="Giày Thể Thao Just Do It Sắc Cam Bùng Nổ">Giày Thể Thao Just Do It Sắc Cam Bùng Nổ (980.000 đ)</option>
+                  <option value="Giày Sneaker C&S Shark Fang Low White">Giày Sneaker C&S Shark Fang Low White (1.290.000 đ)</option>
+                  <option value="Giày Thể Thao Hunter Blue Ocean Air">Giày Thể Thao Hunter Blue Ocean Air (899.000 đ)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="order-size">SIZE GIÀY *</label>
+                <select class="form-control" id="order-size">
+                  <option value="38">Size 38 (24.0 cm)</option>
+                  <option value="39">Size 39 (24.5 cm)</option>
+                  <option value="40" selected>Size 40 (25.0 cm)</option>
+                  <option value="41">Size 41 (25.5 cm)</option>
+                  <option value="42">Size 42 (26.0 cm)</option>
+                  <option value="43">Size 43 (26.5 cm)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="order-address">ĐỊA CHỈ NHẬN HÀNG *</label>
+              <input class="form-control" type="text" id="order-address" required placeholder="Số nhà, tên đường, phường/xã, quận/huyện...">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="order-note">GHI CHÚ ĐƠN HÀNG</label>
+              <textarea class="form-control" id="order-note" placeholder="Yêu cầu giao giờ hành chính, bọc quà tặng..."></textarea>
+            </div>
+
+            <label class="checkbox-wrap">
+              <input type="checkbox" id="check-promo" checked>
+              <span>Tôi muốn áp dụng mã giảm giá 50% tuần lễ khai trương và nhận quà tặng kèm.</span>
+            </label>
+
+            <button class="btn-submit-order" type="submit">Gửi Yêu Cầu Đặt Hàng</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#top">
+          <svg class="logo-icon-svg" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M2 20 C8 13 18 9 30 12 C30 17 27 24 25 25 L3 25 Z"/>
+            <line x1="2" y1="26" x2="30" y2="26" stroke="#111827" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          Sneaker <span class="cs-accent">C&amp;S</span>
+        </a>
+        <p>Cửa hàng Sneaker C&amp;S - Điểm đến lý tưởng cho người yêu giày thể thao, sneaker chính hãng với mẫu mã đa dạng và dịch vụ chăm sóc khách hàng hàng đầu.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Danh Mục Giày</h4>
+        <ul>
+          <li><a href="#san-pham" data-filter="thethao">Giày Thể Thao Nam/Nữ</a></li>
+          <li><a href="#san-pham" data-filter="low">Sneaker Cổ Thấp (Low-Top)</a></li>
+          <li><a href="#san-pham" data-filter="mid-high">Sneaker Cổ Cao (High-Top)</a></li>
+          <li><a href="#san-pham" data-filter="runner">Giày Chạy Bộ &amp; Slip-On</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chính Sách &amp; Hỗ Trợ</h4>
+        <ul>
+          <li><a href="#vi-sao">Chính sách đổi size 7 ngày</a></li>
+          <li><a href="#vi-sao">Bảo hành chính hãng 12 tháng</a></li>
+          <li><a href="#vi-sao">Hướng dẫn chọn size giày chuẩn</a></li>
+          <li><a href="#lien-he">Tra cứu tình trạng đơn hàng</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Thông Tin Liên Hệ</h4>
+        <address>
+          <p>📍 TP. Biên Hòa, Tỉnh Đồng Nai</p>
+          <p>📞 Hotline: 0900 000 000</p>
+          <p>✉️ <a href="mailto:sneakercs.vn@gmail.com">sneakercs.vn@gmail.com</a></p>
+          <p>⏰ 8:30 - 21:30 (Mở cửa tất cả các ngày)</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; 2026 Sneaker C&amp;S. Tất cả quyền được bảo lưu.</small>
+      <div class="student-credit">
+        Bài thi Giữa kỳ môn Thiết kế Web / Vibe Coding | SV: <strong>Vũ Minh Tiến</strong> - MSSV: <strong>125000764</strong> - ĐH Lạc Hồng
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       CART MODAL / DRAWER
+       ====================================================================== -->
+  <div class="cart-modal-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Giỏ hàng của bạn">
+    <div class="drawer-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Giỏ Hàng Của Bạn
+      </h3>
+      <button class="close-drawer-btn" id="close-cart-btn" type="button" aria-label="Đóng giỏ hàng">✕</button>
+    </div>
+
+    <!-- Danh sách sản phẩm trong giỏ -->
+    <div class="cart-items-list" id="cart-items-container">
+      <!-- Render qua JS -->
+    </div>
+
+    <!-- Chân giỏ hàng -->
+    <div class="drawer-footer">
+      <div class="drawer-summary-row">
+        <span>Tạm tính:</span>
+        <span id="cart-subtotal">0 đ</span>
+      </div>
+      <div class="drawer-summary-row">
+        <span>Ưu đãi khai trương:</span>
+        <span style="color:var(--primary-red); font-weight:700;">Đã áp dụng giảm giá</span>
+      </div>
+      <div class="drawer-summary-row">
+        <span>Phí vận chuyển:</span>
+        <span style="color:#10b981; font-weight:700;">Miễn phí toàn quốc</span>
+      </div>
+      <div class="drawer-summary-row total">
+        <span>Tổng thanh toán:</span>
+        <span id="cart-total" style="color:var(--primary-red);">0 đ</span>
+      </div>
+      <button class="btn-checkout" id="checkout-btn" type="button">Tiến Hành Thanh Toán</button>
+    </div>
+  </aside>
+
+  <!-- Container chứa thông báo Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ======================================================================
+       SCRIPTS: AOS & INTERACTIVE LOGIC
+       ====================================================================== -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // 1. KHỞI TẠO AOS
+    AOS.init({
+      duration: 600,
+      once: true,
+      offset: 50,
+      easing: 'ease-out-cubic'
+    });
+
+    // 2. QUẢN LÝ DỮ LIỆU GIỎ HÀNG (STATE & LOCALSTORAGE)
+    let cart = [];
+    try {
+      const saved = localStorage.getItem('sneakercs_cart');
+      if (saved) cart = JSON.parse(saved);
+    } catch (e) {
+      cart = [];
+    }
+
+    const cartCountEl = document.getElementById('cart-count');
+    const cartDrawerEl = document.getElementById('cart-drawer');
+    const cartBackdropEl = document.getElementById('cart-backdrop');
+    const cartItemsEl = document.getElementById('cart-items-container');
+    const cartSubtotalEl = document.getElementById('cart-subtotal');
+    const cartTotalEl = document.getElementById('cart-total');
+    const toastContainerEl = document.getElementById('toast-container');
+
+    function formatVND(amount) {
+      return new Intl.NumberFormat('vi-VN').format(amount) + ' đ';
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem('sneakercs_cart', JSON.stringify(cart));
+      } catch (e) {}
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartCountEl.textContent = totalItems;
+      cartCountEl.classList.remove('bump');
+      void cartCountEl.offsetWidth;
+      cartCountEl.classList.add('bump');
+
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = `
+          <div class="empty-cart-msg">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <p>Giỏ hàng của bạn đang trống.</p>
+            <p style="font-size:0.85rem; color:#9ca3af;">Hãy chọn ngay các mẫu giày thể thao bán chạy để nhận ưu đãi!</p>
+          </div>
+        `;
+        cartSubtotalEl.textContent = '0 đ';
+        cartTotalEl.textContent = '0 đ';
+        return;
+      }
+
+      let subtotal = 0;
+      cartItemsEl.innerHTML = cart.map((item, index) => {
+        subtotal += item.price * item.qty;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-thumb">
+              <img src="${item.img}" alt="${item.name}">
+            </div>
+            <div class="cart-item-meta">
+              <h4>${item.name}</h4>
+              <div class="item-size">Size: ${item.size}</div>
+              <div class="item-price">${formatVND(item.price)}</div>
+            </div>
+            <div class="cart-item-actions">
+              <div class="qty-controls">
+                <button type="button" class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                <span class="qty-num">${item.qty}</span>
+                <button type="button" class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+              </div>
+              <button type="button" class="btn-remove-item" onclick="removeItem(${index})">Xóa</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      cartSubtotalEl.textContent = formatVND(subtotal);
+      cartTotalEl.textContent = formatVND(subtotal);
+    }
+
+    window.changeQty = function(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+      updateCartUI();
+    };
+
+    window.removeItem = function(index) {
+      if (!cart[index]) return;
+      showToast(`Đã xóa "${cart[index].name}" khỏi giỏ hàng`);
+      cart.splice(index, 1);
+      saveCart();
+      updateCartUI();
+    };
+
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `
+        <span style="color:var(--primary-red); font-size:1.2rem;">✓</span>
+        <div>${message}</div>
+      `;
+      toastContainerEl.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // 3. CHỌN SIZE TRÊN TỪNG CARD
+    document.querySelectorAll('.product-card').forEach(card => {
+      const sizeBtns = card.querySelectorAll('.size-btn');
+      sizeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sizeBtns.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+    });
+
+    // 4. THÊM VÀO GIỎ HÀNG
+    document.querySelectorAll('.btn-card-add').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        const name = btn.getAttribute('data-name');
+        const price = Number(btn.getAttribute('data-price'));
+        const img = btn.getAttribute('data-img');
+        
+        const card = btn.closest('.product-card');
+        const selectedSizeBtn = card.querySelector('.size-btn.selected');
+        const size = selectedSizeBtn ? selectedSizeBtn.textContent.trim() : '40';
+
+        const existing = cart.find(item => item.id === id && item.size === size);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ id, name, price, size, img, qty: 1 });
+        }
+
+        saveCart();
+        updateCartUI();
+
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Đã thêm';
+        btn.style.background = '#e53935';
+        btn.style.color = '#ffffff';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 1200);
+
+        showToast(`Đã thêm <strong>${name}</strong> (Size ${size}) vào giỏ!`);
+      });
+    });
+
+    // 5. ĐÓNG MỞ CART DRAWER
+    const openCartBtn = document.getElementById('open-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+
+    function openCart() {
+      cartDrawerEl.classList.add('active');
+      cartBackdropEl.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      cartDrawerEl.classList.remove('active');
+      cartBackdropEl.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartBackdropEl.addEventListener('click', closeCart);
+
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        showToast('Giỏ hàng trống! Hãy chọn sản phẩm trước.');
+        return;
+      }
+      closeCart();
+      const contactSection = document.getElementById('lien-he');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      showToast('Vui lòng hoàn tất thông tin nhận hàng để chốt đơn ưu đãi!');
+    });
+
+    // 6. BỘ LỌC DANH MỤC
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    function applyFilter(category) {
+      filterBtns.forEach(b => {
+        if (b.getAttribute('data-filter') === category) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+
+      productCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-filter');
+        applyFilter(category);
+      });
+    });
+
+    document.querySelectorAll('.category-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-filter');
+        applyFilter(filter);
+        document.getElementById('san-pham').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // 7. MENU DI ĐỘNG
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    // 8. FORM ĐẶT HÀNG
+    const preorderForm = document.getElementById('preorder-form');
+    preorderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('order-name').value;
+      const phone = document.getElementById('order-phone').value;
+      const product = document.getElementById('order-product').value;
+      const size = document.getElementById('order-size').value;
+
+      showToast(`🎉 Cảm ơn ${name}! Đơn đặt <strong>${product}</strong> (Size ${size}) đã được gửi thành công. Hotline sẽ liên hệ tới số ${phone}.`);
+      preorderForm.reset();
+    });
+
+    // Khởi tạo hiển thị giỏ hàng
+    updateCartUI();
+  </script>
+</body>
+</html>
